@@ -1,0 +1,108 @@
+plugins {
+    id 'java'
+    id 'jacoco'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_24
+    targetCompatibility = JavaVersion.VERSION_24
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(24))
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Guava for contracts
+    implementation 'com.google.guava:guava:33.5.0-jre'
+
+    // jqwik for property-based testing
+    testImplementation "net.jqwik:jqwik:1.9.3"
+
+    // Hamcrest matchers
+    testImplementation 'org.hamcrest:hamcrest:2.2'
+    
+    // JUnit for tests
+    testImplementation "org.junit.jupiter:junit-jupiter-api:6.0.0"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:6.0.0"
+    testRuntimeOnly "org.junit.platform:junit-platform-launcher"
+}
+
+test {
+    useJUnitPlatform {
+        includeEngines 'jqwik', 'junit-jupiter'
+    }
+    testLogging {
+        events "passed", "skipped", "failed"
+	exceptionFormat "short"
+    }
+    reports {
+        junitXml.outputLocation = layout.buildDirectory.dir("test-junit-xml")
+    }
+}
+compileTestJava {
+	options.compilerArgs += '-parameters'
+	options.encoding = 'UTF-8'
+}
+
+jacoco {
+    toolVersion = "0.8.13"
+    reportsDirectory = layout.buildDirectory.dir("reports/coverage")
+}
+// This task only makes sense if 'test' has already run, i.e., "gradle test jacocoTestReport"
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = true
+        xml.outputLocation = layout.buildDirectory.file("reports/jacoco-coverage.xml")
+        csv.required = true
+        html.required = true
+        html.outputLocation = file("${buildDir}/reports/coverage")
+        html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+    }
+}
+
+tasks.withType(Test) {
+    // Enable assertions (-ea) for tests
+    enableAssertions = true
+}
+
+// This task only runs if 'test' has already run, i.e., "gradle test jacocoTestCoverageVerification"
+//jacocoTestCoverageVerification {
+//    violationRules {
+//        rule {
+//            limit {
+//                minimum = 0.99
+//            }
+//        }
+//
+//        rule {
+//            enabled = true
+//            element = 'CLASS'
+//            includes = ['edu.drexel.se320.*']
+//
+//            limit {
+//                counter = 'LINE'
+//                value = 'TOTALCOUNT'
+//                maximum = 0.3
+//            }
+//        }
+//    }
+//}
+
+task zipSource(type: Zip) {
+    from layout.projectDirectory
+    exclude 'build/**'
+    exclude 'bin/**'
+    exclude '.gradle/**'
+    exclude '.settings/**'
+    exclude '**/*.swp'
+    exclude '.classpath'
+    exclude '.jqwik-database'
+    exclude '**/HookedTests.java'
+    destinationDirectory.set(layout.buildDirectory)
+    archiveFileName.set('se320-homework2.zip')
+}
