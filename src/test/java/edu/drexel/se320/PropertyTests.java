@@ -19,6 +19,24 @@ import net.jqwik.api.statistics.Statistics;
 
 
 public class PropertyTests extends BinarySearchBase {
+    @Property
+    Arbitrary<Integer[]> sortedIntArrays() {
+        return Arbitraries.integers().between(0, 100)
+            .array(Integer[].class)
+            .ofMinSize(0).ofMaxSize(30)
+            .map(arr -> {
+                java.util.Arrays.sort(arr);
+                return arr;
+            });
+    }
+
+    @Provide
+    Arbitrary<Integer[]> sortedIntArraysNonEmpty() {
+        return sortedIntArrays().filter(arr -> arr.length > 0);
+    }
+
+    
+    
 
     @Property
     public boolean checkSingleArrayElt(@ForAll int x) {
