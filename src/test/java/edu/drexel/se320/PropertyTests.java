@@ -72,5 +72,23 @@ public class PropertyTests extends BinarySearchBase {
             return !java.util.Arrays.equals(arr, copy);
         });
     }
-}
+    @Property
+    void foundIndexValid(
+        @ForAll("presentPairs") Tuple2<Integer[], Integer> data) {
+        Integer[] array = data.get1();
+        Integer elem = data.get2();
+        int index = binarySearch(array, elem);
+        assertThat(index, is(lessThan(array.length)));
+        assertThat(array[index], is(elem));
+    }
 
+    @Property
+    void belowMinThrows(
+        @ForAll("belowMinPairs") Tuple2<Integer[], Integer> data) {
+        Integer[] array = data.get1();
+        Integer elem = data.get2();
+        assertThrows(
+            java.util.NoSuchElementException.class,
+            () -> binarySearch(array, elem)
+        );
+    }
