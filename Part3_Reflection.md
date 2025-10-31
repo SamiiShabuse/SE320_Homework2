@@ -1,0 +1,13 @@
+# Reflection
+
+## Question 1: Comparing property-based testing to closed-box testing, which seems easier to do for you at this time? (Many of you have prior experience that might influence your answer; that’s okay)
+
+Comparing both property-based testing to closed-box testing, it seems easier to do property-based testing for me at this time. I did it before at co-op so I really knew what to do, and it is much easier jsut to think in specific examples of what inputs you get and outputs to expect based on documentation. This is the first-time every doing property-based testing so it took longer to design, especially around the generators.
+
+## Question 2: Given a set of tests for some unfamiliar software component, which style of tests (concrete closed-box tests with specific inputs, or property-based tests) do you think would be most useful for you to understand the expected behavior of the software? (i.e., which would help you learn the specification from the tests, assuming you only had the tests, and most likely no comments)
+
+If I was given a set of tests for some unfamiliar software componenet, I think the style of tests are concrete closed-box tests witsh specific inputs would be more useful for me to understand the expected behavior of the software. It's because it just gets straight to the point and I can see what is really going on, and what the user expects and the expected outcome. And they match to open-box testing so the writing format looks similar.
+
+## Question 3: If the specification for search changed in the future, which style of test suite (closed-box or property-based) would most likely be easier/simpler to update for the new specification? This is a speculative question, and not specific to a particular change; example changes to consider include changing it to assume the array is sorted in decreasing order rather than increasing order, or to take a set of elements to search for and return true if all of them are present, though you shouldn’t assume it’s necessarily one of those particular changes.
+
+If specifications changed for search changed in the future, the style of tests suites that would definitely be easier to change in the future would property-based would be easier/simpler to change for new specification. Because all the generators are grouped up together and I can easily just change those to match whatever specifications would be changed. After that I can just focus on the failing test cases. Compared to closed-box testing you have to jump around and try to find which test cases matter and which don't matter anymore.
