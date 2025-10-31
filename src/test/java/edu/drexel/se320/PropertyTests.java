@@ -19,7 +19,7 @@ import net.jqwik.api.statistics.Statistics;
 
 
 public class PropertyTests extends BinarySearchBase {
-    @Property
+    @Provide
     Arbitrary<Integer[]> sortedIntArrays() {
         return Arbitraries.integers().between(0, 100)
             .array(Integer[].class)
@@ -35,15 +35,12 @@ public class PropertyTests extends BinarySearchBase {
         return sortedIntArrays().filter(arr -> arr.length > 0);
     }
 
-    
-    
-
-    @Property
-    public boolean checkSingleArrayElt(@ForAll int x) {
-	    Integer[] arr = { x };
-	    return find(arr, x) == 0;
+    @Provide
+    Arbitrary<Integer[]> singletonArrays() {
+        return Arbitraries.integers().between(0, 100)
+            .map(v -> new Integer[]{ v });
     }
 
-
+    
 }
 
