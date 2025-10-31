@@ -41,6 +41,36 @@ public class PropertyTests extends BinarySearchBase {
             .map(v -> new Integer[]{ v });
     }
 
-    
+    @Provide
+    Arbitrary<Tuple2<Integer[], Integer>> presentPairs() {
+        return sortedIntArraysNonEmpty.flatMap(
+            arr -> {
+                int idx = Arbitraries.integers().between(0, arr.length - 1).sample();
+                return Arbitraries.just(Tuple.of(arr, arr[idx]));
+            }
+        );
+    }
+
+    @Provide
+    Arbitrary<Tuple2<Integer[], Integer>> belowMinPairs() {
+        return sortedIntArraysNonEmpty().map(arr -> Tuple.of(arr, arr[0] - 1));
+    }
+
+    @Provide
+    Arbitrary<Tuple2<Integer[], Integer>> aboveMaxPairs() {
+        return sortedIntArraysNonEmpty.map(arr -> Tuple.of(arr, arr[arr.length - 1] + 1));
+    }
+
+    @Provide
+    Arbitrary<Integer[]> unsortedIntegerArrays() {
+        return Arbitraries.integers().between(0, 100)
+        .array(Integer[].class)
+        .ofMinSize(1).ofMaxSize(30)
+        .filter(arr -> {
+            Integer[] copy = java.util.Arrays.copyOf(arr, arr.length);
+            java.util.Arrays.sort(copy);
+            return !java.util.Arrays.equals(arr, copy);
+        });
+    }
 }
 
