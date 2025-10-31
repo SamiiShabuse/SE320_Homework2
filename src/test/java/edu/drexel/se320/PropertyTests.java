@@ -3,10 +3,10 @@ package edu.drexel.se320;
 // Hamcrest
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.anyOf;
 import static org.hamcrest.Matchers.lessThan;
 
 // Core JUnit 5
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
@@ -15,8 +15,11 @@ import org.junit.jupiter.api.Test;
 import net.jqwik.api.*;
 import net.jqwik.api.Tuple.Tuple2;
 import net.jqwik.api.constraints.*;
-import net.jqwik.api.statistics.Statistics;
 
+import java.util.NoSuchElementException;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class PropertyTests extends BinarySearchBase {
 
@@ -64,7 +67,7 @@ public class PropertyTests extends BinarySearchBase {
     */
     @Provide
     Arbitrary<Tuple2<Integer[], Integer>> presentPairs() {
-        return sortedIntArraysNonEmpty.flatMap(
+        return sortedIntArraysNonEmpty().flatMap(
             arr -> {
                 int idx = Arbitraries.integers().between(0, arr.length - 1).sample();
                 return Arbitraries.just(Tuple.of(arr, arr[idx]));
@@ -116,7 +119,7 @@ public class PropertyTests extends BinarySearchBase {
         @ForAll("presentPairs") Tuple2<Integer[], Integer> data) {
         Integer[] array = data.get1();
         Integer elem = data.get2();
-        int index = binarySearch(array, elem);
+        int index = find(array, elem);
         assertThat(index, is(lessThan(array.length)));
         assertThat(array[index], is(elem));
     }
@@ -129,7 +132,7 @@ public class PropertyTests extends BinarySearchBase {
         Integer elem = data.get2();
         assertThrows(
             java.util.NoSuchElementException.class,
-            () -> binarySearch(array, elem)
+            () -> find(array, elem)
         );
     }
 
@@ -141,20 +144,20 @@ public class PropertyTests extends BinarySearchBase {
         Integer elem = data.get2();
         assertThrows(
             java.util.NoSuchElementException.class,
-            () -> binarySearch(array, elem)
+            () -> find(array, elem)
         );
     }
 
     @Property
     @Label("Duplicates still return a matching index")
-    void duplicatesReturnMatch(@ForAll("sortedIntegerArraysNonEmpty") Integer[] base) {
-        int pick = Arbitraries.integers.between(0, base.length - 1).sample();
+    void duplicatesReturnMatch(@ForAll("sortedIntArraysNonEmpty") Integer[] base) {
+        int pick = Arbitraries.integers().between(0, base.length - 1).sample();
         Integer val = base[pick];
         List<Integer> list = new ArrayList<>(Arrays.asList(base));
         list.add(val);
         Integer[] arr = list.toArray(new Integer[0]);
-        Array.sort(arr);
-        int index = binarySearch(arr, val);
+        Arrays.sort(arr);
+        int index = find(arr, val);
         assertEquals(val, arr[index]);
     }
 
@@ -164,8 +167,8 @@ public class PropertyTests extends BinarySearchBase {
         Integer[] arr = Arrays.copyOf(data.get1(), data.get1().length);
         Integer[] snapshot = Arrays.copyOf(arr, arr.length);
         Integer elem = data.get2();
-        binarySearch(arr, elem);
-        assertArrayEquals(snapshot,array);
+        find(arr, elem);
+        assertArrayEquals(snapshot, arr);
     }
 
     @Property
@@ -174,7 +177,7 @@ public class PropertyTests extends BinarySearchBase {
         Integer[] arr = Arrays.copyOf(data.get1(), data.get1().length);
         Integer[] snapshot = Arrays.copyOf(arr, arr.length);
         Integer elem = data.get2();
-        assertThrows(NoSuchElementException.class, () -> binarySearch(arr, elem));
+        assertThrows(NoSuchElementException.class, () -> find(arr, elem));
         assertArrayEquals(snapshot, arr);
     }
 
@@ -182,7 +185,7 @@ public class PropertyTests extends BinarySearchBase {
     @Label("Singleton array: found at index 0")
     void singletonFound(@ForAll("singletonArrays") Integer[] single) {
         Integer e = single[0];
-        int idx = binarySearch(single, e);
+        int idx = find(single, e);
         assertEquals(0, idx);
         assertEquals(e, single[idx]);
     }
@@ -191,28 +194,28 @@ public class PropertyTests extends BinarySearchBase {
     @Label("Singleton array: not-found throws")
     void singletonNotFound(@ForAll("singletonArrays") Integer[] single) {
         Integer e = single[0];
-        assertThrows(NoSuchElementException.class, () -> binarySearch(single, e - 1));
-        assertThrows(NoSuchElementException.class, () -> binarySearch(single, e + 1));
+        assertThrows(NoSuchElementException.class, () -> find(single, e - 1));
+        assertThrows(NoSuchElementException.class, () -> find(single, e + 1));
     }
 
     @Property
     @Label("Empty array: IllegalArgumentException")
     void emptyArrayIllegal(@ForAll @IntRange(min = 0, max = 100) int e) {
         Integer[] empty = new Integer[0];
-        assertThrows(IllegalArgumentException.class, () -> binarySearch(empty, e));
+        assertThrows(IllegalArgumentException.class, () -> find(empty, e));
     }
 
     @Example
     @Label("Null element: IllegalArgumentException")
     void nullElementIllegal() {
         Integer[] arr = {1, 2, 3};
-        assertThrows(IllegalArgumentException.class, () -> binarySearch(arr, null));
+        assertThrows(IllegalArgumentException.class, () -> find(arr, null));
     }
 
     @Example
     @Label("Null array: IllegalArgumentException")
     void nullArrayIllegal() {
-        assertThrows(IllegalArgumentException.class, () -> binarySearch(null, 1));
+        assertThrows(IllegalArgumentException.class, () -> find(null, 1));
     }
 
     @Property
@@ -222,7 +225,7 @@ public class PropertyTests extends BinarySearchBase {
             @ForAll @IntRange(min = -10, max = 110) int elem
     ) {
         try {
-            int idx = binarySearch(unsorted, elem);
+            int idx = find(unsorted, elem);
             assertEquals(elem, unsorted[idx]);
         } catch (NoSuchElementException ok) {
         }

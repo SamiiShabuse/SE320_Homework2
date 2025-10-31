@@ -1,0 +1,143 @@
+btimestamp = 2025-10-31T11:42:54.571505300, PropertyTests:Search success does not modify array = 
+T                              |-----------------------jqwik-----------------------
+8tries = 1000                  | # of calls to property
+9checks = 1000                 | # of not rejected calls
+Cgeneration = RANDOMIZED       | parameters are randomly generated
+Rafter-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+Cwhen-fixed-seed = ALLOW       | fixing the random seed is allowed
+9edge-cases#mode = MIXIN       | edge cases are mixed in
+>edge-cases#total = 5          | # of all combined edge cases
+Fedge-cases#tried = 5          | # of edge cases tried in current run
+Kseed = 1018303763857372596    | random seed to reproduce generated values
+
+
+ctimestamp = 2025-10-31T11:42:54.622596900, PropertyTests:Above maximum: NoSuchElementException = 
+T                              |-----------------------jqwik-----------------------
+8tries = 1000                  | # of calls to property
+9checks = 1000                 | # of not rejected calls
+Cgeneration = RANDOMIZED       | parameters are randomly generated
+Rafter-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+Cwhen-fixed-seed = ALLOW       | fixing the random seed is allowed
+9edge-cases#mode = MIXIN       | edge cases are mixed in
+>edge-cases#total = 5          | # of all combined edge cases
+Fedge-cases#tried = 5          | # of edge cases tried in current run
+Kseed = 2146339811445815070    | random seed to reproduce generated values
+
+
+btimestamp = 2025-10-31T11:42:54.650635500, PropertyTests:Search failure does not modify array = 
+T                              |-----------------------jqwik-----------------------
+8tries = 1000                  | # of calls to property
+9checks = 1000                 | # of not rejected calls
+Cgeneration = RANDOMIZED       | parameters are randomly generated
+Rafter-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+Cwhen-fixed-seed = ALLOW       | fixing the random seed is allowed
+9edge-cases#mode = MIXIN       | edge cases are mixed in
+>edge-cases#total = 5          | # of all combined edge cases
+Fedge-cases#tried = 5          | # of edge cases tried in current run
+Kseed = 1983018120254590409    | random seed to reproduce generated values
+
+
+_timestamp = 2025-10-31T11:42:54.669245200, PropertyTests:Singleton array: found at index 0 = 
+T                              |-----------------------jqwik-----------------------
+8tries = 101                   | # of calls to property
+9checks = 101                  | # of not rejected calls
+Ggeneration = EXHAUSTIVE       | parameters are exhaustively generated
+Rafter-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+Cwhen-fixed-seed = ALLOW       | fixing the random seed is allowed
+9edge-cases#mode = MIXIN       | edge cases are mixed in
+>edge-cases#total = 0          | # of all combined edge cases
+Fedge-cases#tried = 0          | # of edge cases tried in current run
+Kseed = -3046903324306715420   | random seed to reproduce generated values
+
+
+itimestamp = 2025-10-31T11:42:54.708799, PropertyTests:Found element: index in-bounds & value matches = 
+T                              |-----------------------jqwik-----------------------
+8tries = 1000                  | # of calls to property
+9checks = 1000                 | # of not rejected calls
+Cgeneration = RANDOMIZED       | parameters are randomly generated
+Rafter-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+Cwhen-fixed-seed = ALLOW       | fixing the random seed is allowed
+9edge-cases#mode = MIXIN       | edge cases are mixed in
+>edge-cases#total = 5          | # of all combined edge cases
+Fedge-cases#tried = 5          | # of edge cases tried in current run
+Kseed = -6917270258389993477   | random seed to reproduce generated values
+
+
+ftimestamp = 2025-10-31T11:42:54.725835900, PropertyTests:Duplicates still return a matching index = 
+T                              |-----------------------jqwik-----------------------
+8tries = 1000                  | # of calls to property
+9checks = 1000                 | # of not rejected calls
+Cgeneration = RANDOMIZED       | parameters are randomly generated
+Rafter-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+Cwhen-fixed-seed = ALLOW       | fixing the random seed is allowed
+9edge-cases#mode = MIXIN       | edge cases are mixed in
+>edge-cases#total = 5          | # of all combined edge cases
+Fedge-cases#tried = 5          | # of edge cases tried in current run
+Kseed = -4895919216561417838   | random seed to reproduce generated values
+
+
+
+_timestamp = 2025-10-31T11:42:54.733846200, PropertyTests:Singleton array: not-found throws = 
+
+T                              |-----------------------jqwik-----------------------
+
+8tries = 101                   | # of calls to property
+
+9checks = 101                  | # of not rejected calls
+
+Ggeneration = EXHAUSTIVE       | parameters are exhaustively generated
+
+Rafter-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+
+Cwhen-fixed-seed = ALLOW       | fixing the random seed is allowed
+
+9edge-cases#mode = MIXIN       | edge cases are mixed in
+
+>edge-cases#total = 0          | # of all combined edge cases
+
+Fedge-cases#tried = 0          | # of edge cases tried in current run
+
+Kseed = 8655175681093042792    | random seed to reproduce generated values
+
+
+
+
+‡timestamp = 2025-10-31T11:42:54.784915900, PropertyTests:Unsorted arrays: either throws or returns matching index (underspecified) = 
+T                              |-----------------------jqwik-----------------------
+8tries = 1000                  | # of calls to property
+9checks = 1000                 | # of not rejected calls
+Cgeneration = RANDOMIZED       | parameters are randomly generated
+Rafter-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+Cwhen-fixed-seed = ALLOW       | fixing the random seed is allowed
+9edge-cases#mode = MIXIN       | edge cases are mixed in
+>edge-cases#total = 0          | # of all combined edge cases
+Fedge-cases#tried = 0          | # of edge cases tried in current run
+Kseed = 5037929083128673626    | random seed to reproduce generated values
+
+
+ctimestamp = 2025-10-31T11:42:54.792426100, PropertyTests:Empty array: IllegalArgumentException = 
+T                              |-----------------------jqwik-----------------------
+8tries = 101                   | # of calls to property
+9checks = 101                  | # of not rejected calls
+Ggeneration = EXHAUSTIVE       | parameters are exhaustively generated
+Rafter-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+Cwhen-fixed-seed = ALLOW       | fixing the random seed is allowed
+9edge-cases#mode = MIXIN       | edge cases are mixed in
+>edge-cases#total = 0          | # of all combined edge cases
+Fedge-cases#tried = 0          | # of edge cases tried in current run
+Kseed = 8733899138157215011    | random seed to reproduce generated values
+
+
+ctimestamp = 2025-10-31T11:42:54.814970800, PropertyTests:Below minimum: NoSuchElementException = 
+T                              |-----------------------jqwik-----------------------
+8tries = 1000                  | # of calls to property
+9checks = 1000                 | # of not rejected calls
+Cgeneration = RANDOMIZED       | parameters are randomly generated
+Rafter-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+Cwhen-fixed-seed = ALLOW       | fixing the random seed is allowed
+9edge-cases#mode = MIXIN       | edge cases are mixed in
+>edge-cases#total = 5          | # of all combined edge cases
+Fedge-cases#tried = 5          | # of edge cases tried in current run
+Kseed = -2056447246451156273   | random seed to reproduce generated values
+
+

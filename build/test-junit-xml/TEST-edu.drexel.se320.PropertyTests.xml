@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="edu.drexel.se320.PropertyTests" tests="12" skipped="0" failures="0" errors="0" timestamp="2025-10-31T15:42:54.278Z" hostname="SAMIIWORKAHOLIC" time="0.537">
+  <properties/>
+  <testcase name="Search success does not modify array" classname="edu.drexel.se320.PropertyTests" time="0.308"/>
+  <testcase name="Above maximum: NoSuchElementException" classname="edu.drexel.se320.PropertyTests" time="0.033"/>
+  <testcase name="Search failure does not modify array" classname="edu.drexel.se320.PropertyTests" time="0.028"/>
+  <testcase name="Singleton array: found at index 0" classname="edu.drexel.se320.PropertyTests" time="0.018"/>
+  <testcase name="Found element: index in-bounds &amp; value matches" classname="edu.drexel.se320.PropertyTests" time="0.04"/>
+  <testcase name="Duplicates still return a matching index" classname="edu.drexel.se320.PropertyTests" time="0.017"/>
+  <testcase name="Null array: IllegalArgumentException" classname="edu.drexel.se320.PropertyTests" time="0.002"/>
+  <testcase name="Null element: IllegalArgumentException" classname="edu.drexel.se320.PropertyTests" time="0.001"/>
+  <testcase name="Singleton array: not-found throws" classname="edu.drexel.se320.PropertyTests" time="0.004"/>
+  <testcase name="Unsorted arrays: either throws or returns matching index (underspecified)" classname="edu.drexel.se320.PropertyTests" time="0.051"/>
+  <testcase name="Empty array: IllegalArgumentException" classname="edu.drexel.se320.PropertyTests" time="0.008"/>
+  <testcase name="Below minimum: NoSuchElementException" classname="edu.drexel.se320.PropertyTests" time="0.022"/>
+  <system-out><![CDATA[timestamp = 2025-10-31T11:42:54.571505300, PropertyTests:Search success does not modify array = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 5          | # of all combined edge cases
+edge-cases#tried = 5          | # of edge cases tried in current run
+seed = 1018303763857372596    | random seed to reproduce generated values
+
+
+timestamp = 2025-10-31T11:42:54.622596900, PropertyTests:Above maximum: NoSuchElementException = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 5          | # of all combined edge cases
+edge-cases#tried = 5          | # of edge cases tried in current run
+seed = 2146339811445815070    | random seed to reproduce generated values
+
+
+timestamp = 2025-10-31T11:42:54.650635500, PropertyTests:Search failure does not modify array = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 5          | # of all combined edge cases
+edge-cases#tried = 5          | # of edge cases tried in current run
+seed = 1983018120254590409    | random seed to reproduce generated values
+
+
+timestamp = 2025-10-31T11:42:54.669245200, PropertyTests:Singleton array: found at index 0 = 
+                              |-----------------------jqwik-----------------------
+tries = 101                   | # of calls to property
+checks = 101                  | # of not rejected calls
+generation = EXHAUSTIVE       | parameters are exhaustively generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 0          | # of all combined edge cases
+edge-cases#tried = 0          | # of edge cases tried in current run
+seed = -3046903324306715420   | random seed to reproduce generated values
+
+
+timestamp = 2025-10-31T11:42:54.708799, PropertyTests:Found element: index in-bounds & value matches = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 5          | # of all combined edge cases
+edge-cases#tried = 5          | # of edge cases tried in current run
+seed = -6917270258389993477   | random seed to reproduce generated values
+
+
+timestamp = 2025-10-31T11:42:54.725835900, PropertyTests:Duplicates still return a matching index = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 5          | # of all combined edge cases
+edge-cases#tried = 5          | # of edge cases tried in current run
+seed = -4895919216561417838   | random seed to reproduce generated values
+
+
+timestamp = 2025-10-31T11:42:54.733846200, PropertyTests:Singleton array: not-found throws = 
+                              |-----------------------jqwik-----------------------
+tries = 101                   | # of calls to property
+checks = 101                  | # of not rejected calls
+generation = EXHAUSTIVE       | parameters are exhaustively generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 0          | # of all combined edge cases
+edge-cases#tried = 0          | # of edge cases tried in current run
+seed = 8655175681093042792    | random seed to reproduce generated values
+
+
+timestamp = 2025-10-31T11:42:54.784915900, PropertyTests:Unsorted arrays: either throws or returns matching index (underspecified) = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 0          | # of all combined edge cases
+edge-cases#tried = 0          | # of edge cases tried in current run
+seed = 5037929083128673626    | random seed to reproduce generated values
+
+
+timestamp = 2025-10-31T11:42:54.792426100, PropertyTests:Empty array: IllegalArgumentException = 
+                              |-----------------------jqwik-----------------------
+tries = 101                   | # of calls to property
+checks = 101                  | # of not rejected calls
+generation = EXHAUSTIVE       | parameters are exhaustively generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 0          | # of all combined edge cases
+edge-cases#tried = 0          | # of edge cases tried in current run
+seed = 8733899138157215011    | random seed to reproduce generated values
+
+
+timestamp = 2025-10-31T11:42:54.814970800, PropertyTests:Below minimum: NoSuchElementException = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 5          | # of all combined edge cases
+edge-cases#tried = 5          | # of edge cases tried in current run
+seed = -2056447246451156273   | random seed to reproduce generated values
+
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
