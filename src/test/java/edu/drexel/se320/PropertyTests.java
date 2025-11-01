@@ -69,8 +69,8 @@ public class PropertyTests extends BinarySearchBase {
     Arbitrary<Tuple2<Integer[], Integer>> presentPairs() {
         return sortedIntArraysNonEmpty().flatMap(
             arr -> {
-                int idx = Arbitraries.integers().between(0, arr.length - 1).sample();
-                return Arbitraries.just(Tuple.of(arr, arr[idx]));
+                int index = Arbitraries.integers().between(0, arr.length - 1).sample();
+                return Arbitraries.just(Tuple.of(arr, arr[index]));
             }
         );
     }
@@ -111,6 +111,14 @@ public class PropertyTests extends BinarySearchBase {
         });
     }
 
+
+    /*
+    * Wrapper around BinarySearch.binarySearchImplementation
+    */
+    private static <T extends Comparable<T>> int bs(T[] a, T e) {
+        return BinarySearch.binarySearchImplementation(a, e);
+    }
+
     /* Property Tests */
 
     @Property
@@ -119,7 +127,7 @@ public class PropertyTests extends BinarySearchBase {
         @ForAll("presentPairs") Tuple2<Integer[], Integer> data) {
         Integer[] array = data.get1();
         Integer elem = data.get2();
-        int index = find(array, elem);
+        int index = bs(array, elem);
         assertThat(index, is(lessThan(array.length)));
         assertThat(array[index], is(elem));
     }
@@ -132,7 +140,7 @@ public class PropertyTests extends BinarySearchBase {
         Integer elem = data.get2();
         assertThrows(
             java.util.NoSuchElementException.class,
-            () -> find(array, elem)
+            () -> bs(array, elem)
         );
     }
 
@@ -144,7 +152,7 @@ public class PropertyTests extends BinarySearchBase {
         Integer elem = data.get2();
         assertThrows(
             java.util.NoSuchElementException.class,
-            () -> find(array, elem)
+            () -> bs(array, elem)
         );
     }
 
@@ -157,7 +165,7 @@ public class PropertyTests extends BinarySearchBase {
         list.add(val);
         Integer[] arr = list.toArray(new Integer[0]);
         Arrays.sort(arr);
-        int index = find(arr, val);
+        int index = bs(arr, val);
         assertEquals(val, arr[index]);
     }
 
@@ -167,7 +175,7 @@ public class PropertyTests extends BinarySearchBase {
         Integer[] arr = Arrays.copyOf(data.get1(), data.get1().length);
         Integer[] snapshot = Arrays.copyOf(arr, arr.length);
         Integer elem = data.get2();
-        find(arr, elem);
+        bs(arr, elem);
         assertArrayEquals(snapshot, arr);
     }
 
@@ -177,7 +185,7 @@ public class PropertyTests extends BinarySearchBase {
         Integer[] arr = Arrays.copyOf(data.get1(), data.get1().length);
         Integer[] snapshot = Arrays.copyOf(arr, arr.length);
         Integer elem = data.get2();
-        assertThrows(NoSuchElementException.class, () -> find(arr, elem));
+        assertThrows(NoSuchElementException.class, () -> bs(arr, elem));
         assertArrayEquals(snapshot, arr);
     }
 
@@ -185,48 +193,48 @@ public class PropertyTests extends BinarySearchBase {
     @Label("Singleton array: found at index 0")
     void singletonFound(@ForAll("singletonArrays") Integer[] single) {
         Integer e = single[0];
-        int idx = find(single, e);
-        assertEquals(0, idx);
-        assertEquals(e, single[idx]);
+        int index = bs(single, e);
+        assertEquals(0, index);
+        assertEquals(e, single[index]);
     }
 
     @Property
     @Label("Singleton array: not-found throws")
     void singletonNotFound(@ForAll("singletonArrays") Integer[] single) {
         Integer e = single[0];
-        assertThrows(NoSuchElementException.class, () -> find(single, e - 1));
-        assertThrows(NoSuchElementException.class, () -> find(single, e + 1));
+        assertThrows(NoSuchElementException.class, () -> bs(single, e - 1));
+        assertThrows(NoSuchElementException.class, () -> bs(single, e + 1));
     }
 
     @Property
     @Label("Empty array: IllegalArgumentException")
     void emptyArrayIllegal(@ForAll @IntRange(min = 0, max = 100) int e) {
         Integer[] empty = new Integer[0];
-        assertThrows(IllegalArgumentException.class, () -> find(empty, e));
+        assertThrows(IllegalArgumentException.class, () -> bs(empty, e));
     }
 
     @Example
     @Label("Null element: IllegalArgumentException")
     void nullElementIllegal() {
         Integer[] arr = {1, 2, 3};
-        assertThrows(IllegalArgumentException.class, () -> find(arr, null));
+        assertThrows(IllegalArgumentException.class, () -> bs(arr, null));
     }
 
     @Example
     @Label("Null array: IllegalArgumentException")
     void nullArrayIllegal() {
-        assertThrows(IllegalArgumentException.class, () -> find(null, 1));
+        assertThrows(IllegalArgumentException.class, () -> bs(null, 1));
     }
 
     @Property
     @Label("Unsorted arrays: either throws or returns matching index (underspecified)")
     void unsortedArraysEitherThrowOrCorrect(
             @ForAll("unsortedIntegerArrays") Integer[] unsorted,
-            @ForAll @IntRange(min = -10, max = 110) int elem
+            @ForAll @IntRange(min = -100, max = 110) int elem
     ) {
         try {
-            int idx = find(unsorted, elem);
-            assertEquals(elem, unsorted[idx]);
+            int index = bs(unsorted, elem);
+            assertEquals(elem, unsorted[index]);
         } catch (NoSuchElementException ok) {
         }
     }

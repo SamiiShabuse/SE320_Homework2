@@ -1,4 +1,4 @@
-btimestamp = 2025-10-31T11:42:54.571505300, PropertyTests:Search success does not modify array = 
+btimestamp = 2025-11-01T02:29:09.411849700, PropertyTests:Search success does not modify array = 
 T                              |-----------------------jqwik-----------------------
 8tries = 1000                  | # of calls to property
 9checks = 1000                 | # of not rejected calls
@@ -8,10 +8,10 @@
 9edge-cases#mode = MIXIN       | edge cases are mixed in
 >edge-cases#total = 5          | # of all combined edge cases
 Fedge-cases#tried = 5          | # of edge cases tried in current run
-Kseed = 1018303763857372596    | random seed to reproduce generated values
+Kseed = -6208320252456586676   | random seed to reproduce generated values
 
 
-ctimestamp = 2025-10-31T11:42:54.622596900, PropertyTests:Above maximum: NoSuchElementException = 
+ctimestamp = 2025-11-01T02:29:09.461904400, PropertyTests:Above maximum: NoSuchElementException = 
 T                              |-----------------------jqwik-----------------------
 8tries = 1000                  | # of calls to property
 9checks = 1000                 | # of not rejected calls
@@ -21,10 +21,10 @@
 9edge-cases#mode = MIXIN       | edge cases are mixed in
 >edge-cases#total = 5          | # of all combined edge cases
 Fedge-cases#tried = 5          | # of edge cases tried in current run
-Kseed = 2146339811445815070    | random seed to reproduce generated values
+Kseed = 6036899182138748911    | random seed to reproduce generated values
 
 
-btimestamp = 2025-10-31T11:42:54.650635500, PropertyTests:Search failure does not modify array = 
+btimestamp = 2025-11-01T02:29:09.488904400, PropertyTests:Search failure does not modify array = 
 T                              |-----------------------jqwik-----------------------
 8tries = 1000                  | # of calls to property
 9checks = 1000                 | # of not rejected calls
@@ -34,10 +34,10 @@
 9edge-cases#mode = MIXIN       | edge cases are mixed in
 >edge-cases#total = 5          | # of all combined edge cases
 Fedge-cases#tried = 5          | # of edge cases tried in current run
-Kseed = 1983018120254590409    | random seed to reproduce generated values
+Kseed = 1814531093958383063    | random seed to reproduce generated values
 
 
-_timestamp = 2025-10-31T11:42:54.669245200, PropertyTests:Singleton array: found at index 0 = 
+_timestamp = 2025-11-01T02:29:09.504903900, PropertyTests:Singleton array: found at index 0 = 
 T                              |-----------------------jqwik-----------------------
 8tries = 101                   | # of calls to property
 9checks = 101                  | # of not rejected calls
@@ -47,10 +47,10 @@
 9edge-cases#mode = MIXIN       | edge cases are mixed in
 >edge-cases#total = 0          | # of all combined edge cases
 Fedge-cases#tried = 0          | # of edge cases tried in current run
-Kseed = -3046903324306715420   | random seed to reproduce generated values
+Kseed = -7382644519502420659   | random seed to reproduce generated values
 
 
-itimestamp = 2025-10-31T11:42:54.708799, PropertyTests:Found element: index in-bounds & value matches = 
+ltimestamp = 2025-11-01T02:29:09.546951800, PropertyTests:Found element: index in-bounds & value matches = 
 T                              |-----------------------jqwik-----------------------
 8tries = 1000                  | # of calls to property
 9checks = 1000                 | # of not rejected calls
@@ -60,10 +60,10 @@
 9edge-cases#mode = MIXIN       | edge cases are mixed in
 >edge-cases#total = 5          | # of all combined edge cases
 Fedge-cases#tried = 5          | # of edge cases tried in current run
-Kseed = -6917270258389993477   | random seed to reproduce generated values
+Kseed = 9101425945361996751    | random seed to reproduce generated values
 
 
-ftimestamp = 2025-10-31T11:42:54.725835900, PropertyTests:Duplicates still return a matching index = 
+ftimestamp = 2025-11-01T02:29:09.561956100, PropertyTests:Duplicates still return a matching index = 
 T                              |-----------------------jqwik-----------------------
 8tries = 1000                  | # of calls to property
 9checks = 1000                 | # of not rejected calls
@@ -73,11 +73,11 @@
 9edge-cases#mode = MIXIN       | edge cases are mixed in
 >edge-cases#total = 5          | # of all combined edge cases
 Fedge-cases#tried = 5          | # of edge cases tried in current run
-Kseed = -4895919216561417838   | random seed to reproduce generated values
+Kseed = -3621776704200193644   | random seed to reproduce generated values
 
 
 
-_timestamp = 2025-10-31T11:42:54.733846200, PropertyTests:Singleton array: not-found throws = 
+_timestamp = 2025-11-01T02:29:09.570055600, PropertyTests:Singleton array: not-found throws = 
 
 T                              |-----------------------jqwik-----------------------
 
@@ -97,12 +97,12 @@ Cwhen-fixed-seed = ALLOW       | fixing the random seed is allowed
 
 Fedge-cases#tried = 0          | # of edge cases tried in current run
 
-Kseed = 8655175681093042792    | random seed to reproduce generated values
+Kseed = -8166859853596253427   | random seed to reproduce generated values
 
 
 
 
-‡timestamp = 2025-10-31T11:42:54.784915900, PropertyTests:Unsorted arrays: either throws or returns matching index (underspecified) = 
+‡timestamp = 2025-11-01T02:29:09.616324700, PropertyTests:Unsorted arrays: either throws or returns matching index (underspecified) = 
 T                              |-----------------------jqwik-----------------------
 8tries = 1000                  | # of calls to property
 9checks = 1000                 | # of not rejected calls
@@ -112,10 +112,10 @@ Kseed = 8655175681093042792    | random seed to reproduce generated values
 9edge-cases#mode = MIXIN       | edge cases are mixed in
 >edge-cases#total = 0          | # of all combined edge cases
 Fedge-cases#tried = 0          | # of edge cases tried in current run
-Kseed = 5037929083128673626    | random seed to reproduce generated values
+Kseed = 1798015421782819148    | random seed to reproduce generated values
 
 
-ctimestamp = 2025-10-31T11:42:54.792426100, PropertyTests:Empty array: IllegalArgumentException = 
+ctimestamp = 2025-11-01T02:29:09.623978300, PropertyTests:Empty array: IllegalArgumentException = 
 T                              |-----------------------jqwik-----------------------
 8tries = 101                   | # of calls to property
 9checks = 101                  | # of not rejected calls
@@ -125,10 +125,10 @@ Kseed = 8655175681093042792    | random seed to reproduce generated values
 9edge-cases#mode = MIXIN       | edge cases are mixed in
 >edge-cases#total = 0          | # of all combined edge cases
 Fedge-cases#tried = 0          | # of edge cases tried in current run
-Kseed = 8733899138157215011    | random seed to reproduce generated values
+Kseed = -1682319054220084361   | random seed to reproduce generated values
 
 
-ctimestamp = 2025-10-31T11:42:54.814970800, PropertyTests:Below minimum: NoSuchElementException = 
+ctimestamp = 2025-11-01T02:29:09.642976700, PropertyTests:Below minimum: NoSuchElementException = 
 T                              |-----------------------jqwik-----------------------
 8tries = 1000                  | # of calls to property
 9checks = 1000                 | # of not rejected calls
@@ -138,6 +138,6 @@ Kseed = 8655175681093042792    | random seed to reproduce generated values
 9edge-cases#mode = MIXIN       | edge cases are mixed in
 >edge-cases#total = 5          | # of all combined edge cases
 Fedge-cases#tried = 5          | # of edge cases tried in current run
-Kseed = -2056447246451156273   | random seed to reproduce generated values
+Kseed = 4500490295150565736    | random seed to reproduce generated values
 
 

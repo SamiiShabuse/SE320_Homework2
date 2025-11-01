@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="edu.drexel.se320.PropertyTests" tests="12" skipped="0" failures="0" errors="0" timestamp="2025-10-31T15:42:54.278Z" hostname="SAMIIWORKAHOLIC" time="0.537">
+<testsuite name="edu.drexel.se320.PropertyTests" tests="12" skipped="0" failures="0" errors="0" timestamp="2025-11-01T06:29:09.116Z" hostname="SAMIIWORKAHOLIC" time="0.527">
   <properties/>
-  <testcase name="Search success does not modify array" classname="edu.drexel.se320.PropertyTests" time="0.308"/>
-  <testcase name="Above maximum: NoSuchElementException" classname="edu.drexel.se320.PropertyTests" time="0.033"/>
-  <testcase name="Search failure does not modify array" classname="edu.drexel.se320.PropertyTests" time="0.028"/>
-  <testcase name="Singleton array: found at index 0" classname="edu.drexel.se320.PropertyTests" time="0.018"/>
-  <testcase name="Found element: index in-bounds &amp; value matches" classname="edu.drexel.se320.PropertyTests" time="0.04"/>
-  <testcase name="Duplicates still return a matching index" classname="edu.drexel.se320.PropertyTests" time="0.017"/>
+  <testcase name="Search success does not modify array" classname="edu.drexel.se320.PropertyTests" time="0.313"/>
+  <testcase name="Above maximum: NoSuchElementException" classname="edu.drexel.se320.PropertyTests" time="0.03"/>
+  <testcase name="Search failure does not modify array" classname="edu.drexel.se320.PropertyTests" time="0.027"/>
+  <testcase name="Singleton array: found at index 0" classname="edu.drexel.se320.PropertyTests" time="0.015"/>
+  <testcase name="Found element: index in-bounds &amp; value matches" classname="edu.drexel.se320.PropertyTests" time="0.042"/>
+  <testcase name="Duplicates still return a matching index" classname="edu.drexel.se320.PropertyTests" time="0.014"/>
   <testcase name="Null array: IllegalArgumentException" classname="edu.drexel.se320.PropertyTests" time="0.002"/>
   <testcase name="Null element: IllegalArgumentException" classname="edu.drexel.se320.PropertyTests" time="0.001"/>
   <testcase name="Singleton array: not-found throws" classname="edu.drexel.se320.PropertyTests" time="0.004"/>
-  <testcase name="Unsorted arrays: either throws or returns matching index (underspecified)" classname="edu.drexel.se320.PropertyTests" time="0.051"/>
+  <testcase name="Unsorted arrays: either throws or returns matching index (underspecified)" classname="edu.drexel.se320.PropertyTests" time="0.046"/>
   <testcase name="Empty array: IllegalArgumentException" classname="edu.drexel.se320.PropertyTests" time="0.008"/>
-  <testcase name="Below minimum: NoSuchElementException" classname="edu.drexel.se320.PropertyTests" time="0.022"/>
-  <system-out><![CDATA[timestamp = 2025-10-31T11:42:54.571505300, PropertyTests:Search success does not modify array = 
+  <testcase name="Below minimum: NoSuchElementException" classname="edu.drexel.se320.PropertyTests" time="0.019"/>
+  <system-out><![CDATA[timestamp = 2025-11-01T02:29:09.411849700, PropertyTests:Search success does not modify array = 
                               |-----------------------jqwik-----------------------
 tries = 1000                  | # of calls to property
 checks = 1000                 | # of not rejected calls
@@ -23,10 +23,10 @@ when-fixed-seed = ALLOW       | fixing the random seed is allowed
 edge-cases#mode = MIXIN       | edge cases are mixed in
 edge-cases#total = 5          | # of all combined edge cases
 edge-cases#tried = 5          | # of edge cases tried in current run
-seed = 1018303763857372596    | random seed to reproduce generated values
+seed = -6208320252456586676   | random seed to reproduce generated values
 
 
-timestamp = 2025-10-31T11:42:54.622596900, PropertyTests:Above maximum: NoSuchElementException = 
+timestamp = 2025-11-01T02:29:09.461904400, PropertyTests:Above maximum: NoSuchElementException = 
                               |-----------------------jqwik-----------------------
 tries = 1000                  | # of calls to property
 checks = 1000                 | # of not rejected calls
@@ -36,10 +36,10 @@ when-fixed-seed = ALLOW       | fixing the random seed is allowed
 edge-cases#mode = MIXIN       | edge cases are mixed in
 edge-cases#total = 5          | # of all combined edge cases
 edge-cases#tried = 5          | # of edge cases tried in current run
-seed = 2146339811445815070    | random seed to reproduce generated values
+seed = 6036899182138748911    | random seed to reproduce generated values
 
 
-timestamp = 2025-10-31T11:42:54.650635500, PropertyTests:Search failure does not modify array = 
+timestamp = 2025-11-01T02:29:09.488904400, PropertyTests:Search failure does not modify array = 
                               |-----------------------jqwik-----------------------
 tries = 1000                  | # of calls to property
 checks = 1000                 | # of not rejected calls
@@ -49,10 +49,10 @@ when-fixed-seed = ALLOW       | fixing the random seed is allowed
 edge-cases#mode = MIXIN       | edge cases are mixed in
 edge-cases#total = 5          | # of all combined edge cases
 edge-cases#tried = 5          | # of edge cases tried in current run
-seed = 1983018120254590409    | random seed to reproduce generated values
+seed = 1814531093958383063    | random seed to reproduce generated values
 
 
-timestamp = 2025-10-31T11:42:54.669245200, PropertyTests:Singleton array: found at index 0 = 
+timestamp = 2025-11-01T02:29:09.504903900, PropertyTests:Singleton array: found at index 0 = 
                               |-----------------------jqwik-----------------------
 tries = 101                   | # of calls to property
 checks = 101                  | # of not rejected calls
@@ -62,10 +62,10 @@ when-fixed-seed = ALLOW       | fixing the random seed is allowed
 edge-cases#mode = MIXIN       | edge cases are mixed in
 edge-cases#total = 0          | # of all combined edge cases
 edge-cases#tried = 0          | # of edge cases tried in current run
-seed = -3046903324306715420   | random seed to reproduce generated values
+seed = -7382644519502420659   | random seed to reproduce generated values
 
 
-timestamp = 2025-10-31T11:42:54.708799, PropertyTests:Found element: index in-bounds & value matches = 
+timestamp = 2025-11-01T02:29:09.546951800, PropertyTests:Found element: index in-bounds & value matches = 
                               |-----------------------jqwik-----------------------
 tries = 1000                  | # of calls to property
 checks = 1000                 | # of not rejected calls
@@ -75,10 +75,10 @@ when-fixed-seed = ALLOW       | fixing the random seed is allowed
 edge-cases#mode = MIXIN       | edge cases are mixed in
 edge-cases#total = 5          | # of all combined edge cases
 edge-cases#tried = 5          | # of edge cases tried in current run
-seed = -6917270258389993477   | random seed to reproduce generated values
+seed = 9101425945361996751    | random seed to reproduce generated values
 
 
-timestamp = 2025-10-31T11:42:54.725835900, PropertyTests:Duplicates still return a matching index = 
+timestamp = 2025-11-01T02:29:09.561956100, PropertyTests:Duplicates still return a matching index = 
                               |-----------------------jqwik-----------------------
 tries = 1000                  | # of calls to property
 checks = 1000                 | # of not rejected calls
@@ -88,10 +88,10 @@ when-fixed-seed = ALLOW       | fixing the random seed is allowed
 edge-cases#mode = MIXIN       | edge cases are mixed in
 edge-cases#total = 5          | # of all combined edge cases
 edge-cases#tried = 5          | # of edge cases tried in current run
-seed = -4895919216561417838   | random seed to reproduce generated values
+seed = -3621776704200193644   | random seed to reproduce generated values
 
 
-timestamp = 2025-10-31T11:42:54.733846200, PropertyTests:Singleton array: not-found throws = 
+timestamp = 2025-11-01T02:29:09.570055600, PropertyTests:Singleton array: not-found throws = 
                               |-----------------------jqwik-----------------------
 tries = 101                   | # of calls to property
 checks = 101                  | # of not rejected calls
@@ -101,10 +101,10 @@ when-fixed-seed = ALLOW       | fixing the random seed is allowed
 edge-cases#mode = MIXIN       | edge cases are mixed in
 edge-cases#total = 0          | # of all combined edge cases
 edge-cases#tried = 0          | # of edge cases tried in current run
-seed = 8655175681093042792    | random seed to reproduce generated values
+seed = -8166859853596253427   | random seed to reproduce generated values
 
 
-timestamp = 2025-10-31T11:42:54.784915900, PropertyTests:Unsorted arrays: either throws or returns matching index (underspecified) = 
+timestamp = 2025-11-01T02:29:09.616324700, PropertyTests:Unsorted arrays: either throws or returns matching index (underspecified) = 
                               |-----------------------jqwik-----------------------
 tries = 1000                  | # of calls to property
 checks = 1000                 | # of not rejected calls
@@ -114,10 +114,10 @@ when-fixed-seed = ALLOW       | fixing the random seed is allowed
 edge-cases#mode = MIXIN       | edge cases are mixed in
 edge-cases#total = 0          | # of all combined edge cases
 edge-cases#tried = 0          | # of edge cases tried in current run
-seed = 5037929083128673626    | random seed to reproduce generated values
+seed = 1798015421782819148    | random seed to reproduce generated values
 
 
-timestamp = 2025-10-31T11:42:54.792426100, PropertyTests:Empty array: IllegalArgumentException = 
+timestamp = 2025-11-01T02:29:09.623978300, PropertyTests:Empty array: IllegalArgumentException = 
                               |-----------------------jqwik-----------------------
 tries = 101                   | # of calls to property
 checks = 101                  | # of not rejected calls
@@ -127,10 +127,10 @@ when-fixed-seed = ALLOW       | fixing the random seed is allowed
 edge-cases#mode = MIXIN       | edge cases are mixed in
 edge-cases#total = 0          | # of all combined edge cases
 edge-cases#tried = 0          | # of edge cases tried in current run
-seed = 8733899138157215011    | random seed to reproduce generated values
+seed = -1682319054220084361   | random seed to reproduce generated values
 
 
-timestamp = 2025-10-31T11:42:54.814970800, PropertyTests:Below minimum: NoSuchElementException = 
+timestamp = 2025-11-01T02:29:09.642976700, PropertyTests:Below minimum: NoSuchElementException = 
                               |-----------------------jqwik-----------------------
 tries = 1000                  | # of calls to property
 checks = 1000                 | # of not rejected calls
@@ -140,7 +140,7 @@ when-fixed-seed = ALLOW       | fixing the random seed is allowed
 edge-cases#mode = MIXIN       | edge cases are mixed in
 edge-cases#total = 5          | # of all combined edge cases
 edge-cases#tried = 5          | # of edge cases tried in current run
-seed = -2056447246451156273   | random seed to reproduce generated values
+seed = 4500490295150565736    | random seed to reproduce generated values
 
 
 ]]></system-out>
